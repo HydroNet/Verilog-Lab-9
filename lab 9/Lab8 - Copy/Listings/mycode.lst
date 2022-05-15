@@ -1,0 +1,191 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 GLOBAL           user_code
+    2 00000000                 IMPORT           LCD_PINS
+    3 00000000                 IMPORT           LCD_CMD
+    4 00000000                 IMPORT           LCD_CHAR
+    5 00000000                 IMPORT           DELAY
+    6 00000000                 IMPORT           LCD_INIT
+    7 00000000                 IMPORT           LCD_STRING
+    8 00000000                 IMPORT           LCD_CLEAR
+    9 00000000                 AREA             mycode, CODE, readonly
+   10 00000000         
+   11 00000000 E0028000 
+                       IO0PIN  EQU              0XE0028000
+   12 00000000         
+   13 00000000         user_code
+   14 00000000 EBFFFFFE        BL               LCD_PINS
+   15 00000004 EBFFFFFE        BL               LCD_INIT
+   16 00000008         
+   17 00000008 E59F0054        LDR              R0,=IO0PIN
+   18 0000000C E3A01101        MOV              R1, #0X40000000
+   19 00000010 E5902000        LDR              R2,[R0]
+   20 00000014 E1822001        ORR              R2,R2,R1
+   21 00000018 E5802000        STR              R2,[R0]
+   22 0000001C E3A06102        MOV              R6, #0X80000000
+   23 00000020 EBFFFFFE        BL               LCD_CMD
+   24 00000024 E3A0640F        MOV              R6, #0X0F000000 ;CURSOR SET AT 
+                                                            LOCATION 00 LINE 1
+   25 00000028 E59F8038        LDR              R8, =STRING1
+   26 0000002C EBFFFFFE        BL               LCD_STRING
+   27 00000030         
+   28 00000030 E3A06103        MOV              R6, #0XC0000000 ;CURSOR SET AT 
+                                                            LOCATION 40 LINE 2
+   29 00000034 E59F8030        LDR              R8, =STRING2
+   30 00000038 EBFFFFFE        BL               LCD_STRING
+   31 0000003C         
+   32 0000003C EAFFFFFE 
+                       STOP    B                STOP
+   33 00000040         
+   34 00000040 54 45 53 
+              54 20 46 
+              49 52 53 
+              54 20 4C 
+              49 4E 45 
+              00       STRING1 DCB              "TEST FIRST LINE",0
+   35 00000050 54 45 53 
+              54 20 53 
+              45 43 4F 
+              4E 44 20 
+              4C 49 4E 
+              45 00    STRING2 DCB              "TEST SECOND LINE",0
+   36 00000061 00 00 00        ALIGN
+   37 00000064                 END
+              E0028000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\mycode.d -o.\objects\mycode.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM
+\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --prede
+fine="__UVISION_VERSION SETA 525" --list=.\listings\mycode.lst mycode.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STOP 0000003C
+
+Symbol: STOP
+   Definitions
+      At line 32 in file mycode.s
+   Uses
+      At line 32 in file mycode.s
+Comment: STOP used once
+STRING1 00000040
+
+Symbol: STRING1
+   Definitions
+      At line 34 in file mycode.s
+   Uses
+      At line 25 in file mycode.s
+Comment: STRING1 used once
+STRING2 00000050
+
+Symbol: STRING2
+   Definitions
+      At line 35 in file mycode.s
+   Uses
+      At line 29 in file mycode.s
+Comment: STRING2 used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file mycode.s
+   Uses
+      None
+Comment: mycode unused
+user_code 00000000
+
+Symbol: user_code
+   Definitions
+      At line 13 in file mycode.s
+   Uses
+      At line 1 in file mycode.s
+Comment: user_code used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+IO0PIN E0028000
+
+Symbol: IO0PIN
+   Definitions
+      At line 11 in file mycode.s
+   Uses
+      At line 17 in file mycode.s
+Comment: IO0PIN used once
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+DELAY 00000000
+
+Symbol: DELAY
+   Definitions
+      At line 5 in file mycode.s
+   Uses
+      None
+Comment: DELAY unused
+LCD_CHAR 00000000
+
+Symbol: LCD_CHAR
+   Definitions
+      At line 4 in file mycode.s
+   Uses
+      None
+Comment: LCD_CHAR unused
+LCD_CLEAR 00000000
+
+Symbol: LCD_CLEAR
+   Definitions
+      At line 8 in file mycode.s
+   Uses
+      None
+Comment: LCD_CLEAR unused
+LCD_CMD 00000000
+
+Symbol: LCD_CMD
+   Definitions
+      At line 3 in file mycode.s
+   Uses
+      At line 23 in file mycode.s
+Comment: LCD_CMD used once
+LCD_INIT 00000000
+
+Symbol: LCD_INIT
+   Definitions
+      At line 6 in file mycode.s
+   Uses
+      At line 15 in file mycode.s
+Comment: LCD_INIT used once
+LCD_PINS 00000000
+
+Symbol: LCD_PINS
+   Definitions
+      At line 2 in file mycode.s
+   Uses
+      At line 14 in file mycode.s
+Comment: LCD_PINS used once
+LCD_STRING 00000000
+
+Symbol: LCD_STRING
+   Definitions
+      At line 7 in file mycode.s
+   Uses
+      At line 26 in file mycode.s
+      At line 30 in file mycode.s
+
+7 symbols
+347 symbols in table

@@ -1,0 +1,118 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    mycode.o(mycode) refers (Special) to lcd_subs.o(mycode) for DELAY
+    mystartup.o(RESET) refers to lcd_subs.o(mycode) for subrts
+    mystartup.o(RESET) refers to mycode.o(mycode) for user_code
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      160  mystartup.o(RESET)
+    lcd_subs.s                               0x00000000   Number         0  lcd_subs.o ABSOLUTE
+    mycode.s                                 0x00000000   Number         0  mycode.o ABSOLUTE
+    mystartup.s                              0x00000000   Number         0  mystartup.o ABSOLUTE
+    SWIHandler                               0x00000040   ARM Code       4  mystartup.o(RESET)
+    PAbtHandler                              0x00000044   ARM Code       4  mystartup.o(RESET)
+    DAbtHandler                              0x00000048   ARM Code       4  mystartup.o(RESET)
+    IRQHandler                               0x0000004c   ARM Code       4  mystartup.o(RESET)
+    FIQHandler                               0x00000050   ARM Code       4  mystartup.o(RESET)
+    UndefHandler                             0x00000054   ARM Code       4  mystartup.o(RESET)
+    Reset_Handler                            0x00000058   ARM Code       0  mystartup.o(RESET)
+    mycode                                   0x000000a0   Section      112  mycode.o(mycode)
+    STRING1                                  0x000000e0   Data          16  mycode.o(mycode)
+    STRING2                                  0x000000f0   Data          17  mycode.o(mycode)
+    mycode                                   0x00000110   Section      900  lcd_subs.o(mycode)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv1$ARM_ISAv4$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    user_code                                0x000000a0   ARM Code       0  mycode.o(mycode)
+    DELAY                                    0x00000110   ARM Code       0  lcd_subs.o(mycode)
+    subrts                                   0x00000110   ARM Code       0  lcd_subs.o(mycode)
+    LCD_PINS                                 0x00000148   ARM Code       0  lcd_subs.o(mycode)
+    LCD_CMD                                  0x000001ac   ARM Code       0  lcd_subs.o(mycode)
+    LCD_CHAR                                 0x00000240   ARM Code       0  lcd_subs.o(mycode)
+    LCD_INIT                                 0x000002d4   ARM Code       0  lcd_subs.o(mycode)
+    LCD_STRING                               0x00000420   ARM Code       0  lcd_subs.o(mycode)
+    LCD_CLEAR                                0x0000044c   ARM Code       0  lcd_subs.o(mycode)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000000
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000494, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000494, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000a0   Code   RO            6  * RESET               mystartup.o
+    0x000000a0   0x000000a0   0x00000070   Code   RO            1    mycode              mycode.o
+    0x00000110   0x00000110   0x00000384   Code   RO            9    mycode              lcd_subs.o
+
+
+    Execution Region ER_RW (Exec base: 0x40000000, Load base: 0x00000494, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region ER_ZI (Exec base: 0x40000000, Load base: 0x00000494, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       900         48          0          0          0        440   lcd_subs.o
+       112         48          0          0          0        264   mycode.o
+       160         48          0          0          0        268   mystartup.o
+
+    ----------------------------------------------------------------------
+      1172        144          0          0          0        972   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      1172        144          0          0          0        972   Grand Totals
+      1172        144          0          0          0        972   ELF Image Totals
+      1172        144          0          0          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 1172 (   1.14kB)
+    Total RW  Size (RW Data + ZI Data)                 0 (   0.00kB)
+    Total ROM Size (Code + RO Data + RW Data)       1172 (   1.14kB)
+
+==============================================================================
+

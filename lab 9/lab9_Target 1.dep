@@ -1,0 +1,4 @@
+Dependencies for Project 'lab9', Target 'Target 1': (DO NOT MODIFY !)
+F (.\lcd_subbs.s)(0x62677436)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\lcd_subbs.lst --xref -o .\lcd_subbs.o --depend .\lcd_subbs.d)
+F (.\mydips.s)(0x6267743A)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\mydips.lst --xref -o .\mydips.o --depend .\mydips.d)
+F (.\mystartup.s)(0x6267752A)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\mystartup.lst --xref -o .\mystartup.o --depend .\mystartup.d)
